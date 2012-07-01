@@ -88,6 +88,11 @@ until keys.empty?
     next if @sum_hash[ne].nil?
     next if mini.include?(ne)
     @sum_hash[ne] = [@sum_hash[ne],@sum_hash[s]+A[ne[0]][ne[1]]].min
+    #if we reached the end spot, then it must be the result.
+    if ne == [L-1,L-1]
+      p @sum_hash[ne]
+      exit
+    end
     #notice that keys may already include ne
     keys = (keys|[ne])
   end
