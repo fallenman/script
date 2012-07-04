@@ -25,7 +25,8 @@
 #it's fxcking fast!!! 0.05s
 
 RES={}
-(1..7*9**2).each do |k|
+N=100
+(1..N*9**2).each do |k|
   tmp = k
   until k == 1 || k == 89
     k = k.to_s.split('').inject(0) {|c,d| c+=d.to_i**2}
@@ -36,7 +37,7 @@ S={}
 (1..9).each do |n|
   S[n**2] = 1
 end
-6.times do |i|
+(N-1).times do |i|
 t={}
 S.each do |s|
   (1..9).each do |m|
