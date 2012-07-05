@@ -25,7 +25,7 @@
 #it's fxcking fast!!! 0.05s
 
 RES={}
-N=100
+N=7
 (1..N*9**2).each do |k|
   tmp = k
   until k == 1 || k == 89
@@ -57,8 +57,8 @@ S.each do |ss|
   end
 end
 p result
-exit
-#in the forum, someone mentioned a permutation formula. for number like 112345, you count each number, you have a result, 2 1 1 1 1, then its permutation is (2+1+1+1+1)!/(2!*1!*1!*1!*1!). i tried this but failed. maybe something wrong with my code.
+#in the forum, someone mentioned a permutation formula. for number like 112345, you count each number, you have a result, 2 1 1 1 1, then its permutation is (2+1+1+1+1)!/(2!*1!*1!*1!*1!).
+#well, this is easy to understand. n-distinct-digit number has a n! permutation, so for repeated digits, you have to divide the permutations by the permutation of each repeated digits.
 result = 0
 (0..9).each do |a|
   (a..9).each do |b|
@@ -66,18 +66,17 @@ result = 0
       (c..9).each do |d|
 	(d..9).each do |e|
 	  (e..9).each do |f|
-	    (e..9).each do |z|
+	    (f..9).each do |z|
 	      if RES[a**2+b**2+c**2+d**2+e**2+f**2+z**2] == 89
 		tmp = {}
 		[a,b,c,d,e,f,z].each do |g|
 		  tmp[g].nil? ? tmp[g] = 1 : tmp[g] += 1
 		end
-		sum,pro=0,1
+		pro=1
 		tmp.each do |h|
-		  sum += h[1]
 		  pro *= (1..h[1]).inject(1) {|i,j| i*=j}
 		end
-		result += (1..sum).inject(1) {|k,l| k*=l}/pro
+		result += (1..N).inject(1) {|k,l| k*=l}/pro
 	      end
 	    end
 	  end
