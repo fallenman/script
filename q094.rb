@@ -9,6 +9,7 @@
 #yep, use the theory in q075, Pythagorean triple.
 #and use the almost equilateral definition, we get two(in fact, four) quadratic equations. n**2 - 4*m*n - m**2 = 1 or -1, 3*m**2 - n**2 = 1 or -1.
 #so if Math.sqrt(3*m**2+1) or Math.sqrt(3*m**2-1) is an integer, we can get a solution.
+#in fact this is Pell's equation, and we can recursively compute all the values. but brute force based on the fact above is enough..
 L=1000000000
 UPPER=Math.sqrt(L/3)
 result=[]
