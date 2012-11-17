@@ -88,7 +88,7 @@ end
   #@queue << k**3
   @queue << formulate(k)
   eq = build_matrix(@queue)
-  p y = resolve_matrix(eq)
+  y = resolve_matrix(eq)
   @res += y.each_with_index.map{|x,i|x*(@queue.length+1)**i}.inject(0){|c,d|c+=d}
 end
 p @res
