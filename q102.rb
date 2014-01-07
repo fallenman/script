@@ -18,7 +18,7 @@
 #
 
 require 'mathn'
-require 'q101'
+require File.expand_path('../q101', __FILE__)
 ORIGIN = [0,0]
 #first, i thought slope was enough. but i didn't make it work. so i reuse q101. 
 #but here i have to solve the divided by 0 problem which wouldn't happen in 101.
