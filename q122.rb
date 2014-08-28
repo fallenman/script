@@ -36,11 +36,14 @@
 # notice that 5 => [[1,2,3,4,5]] is not included
 # which means for each array the max element must be one of the addends.
 # this kind of method gives me 1577, which is not correct.
+# but someone in the forum says it should be correct...
 # this method seems to be called: star addition chain, in which one of the summands is always the previous chain
 #
 # and this seems to be a famous topic: shortest addition chain
 # since it has a page in the very famous Knuth book
 #
+# see also
+# http://wwwhomes.uni-bielefeld.de/achim/addition_chain.html
 h = { 0 => { 1 => [[1]] },
       1 => { 2 => [[1,2]] },
       2 => { 3 => [[1,2,3]],
